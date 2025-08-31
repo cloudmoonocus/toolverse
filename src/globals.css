@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.no-header-screen {
+  height: calc(100vh - 64px - 30px);
+  padding: 32px;
+}
