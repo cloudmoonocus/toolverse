@@ -59,7 +59,7 @@ export default function HomePage() {
       Object.entries(tools)
         .map(([k, v]) => ({ group: k, items: v }))
         .sort((a, b) => a.group.localeCompare(b.group, "zh-Hans-CN")),
-    [tools]
+    [tools],
   );
 
   const filtered = useMemo(
@@ -68,11 +68,11 @@ export default function HomePage() {
         .map((g) => ({
           ...g,
           items: g.items.filter(
-            (it) => it.label.toLowerCase().includes(q.toLowerCase()) || it.href.toLowerCase().includes(q.toLowerCase())
+            (it) => it.label.toLowerCase().includes(q.toLowerCase()) || it.href.toLowerCase().includes(q.toLowerCase()),
           ),
         }))
         .filter((g) => g.items.length > 0 || q === ""),
-    [groups, q]
+    [groups, q],
   );
 
   function groupIcon(name: string) {

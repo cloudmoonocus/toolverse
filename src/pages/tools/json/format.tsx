@@ -109,7 +109,7 @@ export default function JSONFormatPage() {
       }
     },
     [rawContent],
-    { wait: 300 }
+    { wait: 300 },
   );
 
   const withGuard = (fn: () => void) => () => {

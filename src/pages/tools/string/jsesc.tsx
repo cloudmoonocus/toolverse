@@ -104,34 +104,17 @@ export default function StringJsesc() {
       <div className="text-xl font-bold">文本转义</div>
       <div className="flex justify-between">
         <div className="flex gap-2">
-          <Button
-            variant="outlined"
-            startIcon={<ChangeCircleIcon />}
-            onClick={handleJsesc}
-          >
+          <Button variant="outlined" startIcon={<ChangeCircleIcon />} onClick={handleJsesc}>
             转义
           </Button>
-          <Button
-            variant="outlined"
-            startIcon={<ChangeCircleOutlinedIcon />}
-            onClick={handleUnescape}
-          >
+          <Button variant="outlined" startIcon={<ChangeCircleOutlinedIcon />} onClick={handleUnescape}>
             去转义
           </Button>
-          <Button
-            variant="outlined"
-            color="warning"
-            startIcon={<CleaningServicesIcon />}
-            onClick={handleClear}
-          >
+          <Button variant="outlined" color="warning" startIcon={<CleaningServicesIcon />} onClick={handleClear}>
             清空
           </Button>
           <Tooltip title="复制结果">
-            <Button
-              variant="outlined"
-              startIcon={<ContentCopyIcon />}
-              onClick={handleCopy}
-            >
+            <Button variant="outlined" startIcon={<ContentCopyIcon />} onClick={handleCopy}>
               复制
             </Button>
           </Tooltip>
@@ -140,21 +123,13 @@ export default function StringJsesc() {
         <div>
           <FormGroup row>
             <FormControlLabel
-              control={
-                <Checkbox
-                  checked={quotesDouble}
-                  onChange={(e) => setQuotesDouble(e.target.checked)}
-                />
-              }
+              control={<Checkbox checked={quotesDouble} onChange={(e) => setQuotesDouble(e.target.checked)} />}
               label={quotesDouble ? '转义双引号 ( " )' : "转义单引号 ( ' )"}
             />
             <Tooltip title="输出中的所有符号都会被转义">
               <FormControlLabel
                 control={
-                  <Checkbox
-                    checked={escapeEverything}
-                    onChange={(e) => setEscapeEverything(e.target.checked)}
-                  />
+                  <Checkbox checked={escapeEverything} onChange={(e) => setEscapeEverything(e.target.checked)} />
                 }
                 label="转义所有"
               />
