@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
-import Tooltip from "@mui/material/Tooltip";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import TextFieldsIcon from "@mui/icons-material/TextFields";
@@ -88,11 +87,8 @@ export default function HomePage() {
     <div className="no-header-screen p-0!">
       {/* Hero 区域 */}
       <Box
+        className="border-b border-gray-200 bg-gradient-to-br from-[#FFF1F6] via-[#F3F9FF] to-[#E6FFFB]"
         sx={{
-          background: {
-            xs: "linear-gradient(135deg, rgba(99,102,241,.12), rgba(16,185,129,.12))",
-            md: "radial-gradient(1200px 600px at 20% -10%, rgba(99,102,241,.15), transparent 60%), radial-gradient(1000px 600px at 120% -10%, rgba(16,185,129,.18), transparent 55%)",
-          },
           borderBottom: "1px solid",
           borderColor: "divider",
         }}
@@ -112,7 +108,7 @@ export default function HomePage() {
               fullWidth
               size="medium"
               variant="outlined"
-              placeholder="搜索工具，例如：JSON / format / text"
+              placeholder="搜索工具"
               value={q}
               onChange={(e) => setQ(e.target.value)}
               InputProps={{
@@ -127,11 +123,7 @@ export default function HomePage() {
                       <Button size="small" onClick={() => setQ("")}>
                         清除
                       </Button>
-                    ) : (
-                      <Tooltip title="输入关键词进行筛选">
-                        <Chip label="Tip: 输入关键词过滤" size="small" variant="outlined" />
-                      </Tooltip>
-                    )}
+                    ) : null}
                   </InputAdornment>
                 ),
               }}
